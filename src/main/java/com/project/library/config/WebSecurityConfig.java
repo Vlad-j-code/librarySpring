@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         // The pages does not require login
-        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/registration").permitAll()
+        http.authorizeRequests().antMatchers("/home/**", "/login", "/logout", "/registration").permitAll()
                 // /userInfo page requires login as ROLE_USER or ROLE_ADMIN.
                 // If no login, it will redirect to /login page.
                 .antMatchers("/basket", "/subscriptions").hasAuthority("USER")
@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // Config for Login Form
                 .formLogin().loginPage("/login").failureUrl("/login?error=true")
-                .defaultSuccessUrl("/", true)
+                .defaultSuccessUrl("/home", true)
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .and().logout().invalidateHttpSession(true).deleteCookies("JSESSIONID")

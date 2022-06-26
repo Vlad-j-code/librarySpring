@@ -44,7 +44,7 @@
                 </li>
             </c:if>
             <li class="nav-item">
-                <a class="nav-link" href="/"><fmt:message key="link.home"/></a>
+                <a class="nav-link" href="/home"><fmt:message key="link.home"/></a>
             </li>
             <c:if test="${not empty pageContext.request.userPrincipal and pageContext.request.userPrincipal.name ne 'admin@gmail.com'
             and pageContext.request.userPrincipal.name ne 'librarian@gmail.com'}">

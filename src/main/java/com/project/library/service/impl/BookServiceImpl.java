@@ -22,8 +22,24 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> findBooksPageable(String order, int limit, int offset) {
-        return bookRepository.findBooksPage(order, limit, offset);
+    public List<Book> findBooksPageable(String sortField, String order, int limit, int offset) {
+        if (order.equals("asc")) {
+            switch (sortField) {
+                case "title": return bookRepository.findBooksPageByTitleAsc(limit, offset);
+                case "author": return bookRepository.findBooksPageByAuthorAsc(limit, offset);
+                case "isbn": return bookRepository.findBooksPageByIsbnAsc(limit, offset);
+                case "year": return bookRepository.findBooksPageByYearAsc(limit, offset);
+            }
+        }
+        if (order.equals("desc")) {
+            switch (sortField) {
+                case "title": return bookRepository.findBooksPageByTitleDesc(limit, offset);
+                case "author": return bookRepository.findBooksPageByAuthorDesc(limit, offset);
+                case "isbn": return bookRepository.findBooksPageByIsbnDesc(limit, offset);
+                case "year": return bookRepository.findBooksPageByYearDesc(limit, offset);
+            }
+        }
+        return bookRepository.findBooksPageByTitleAsc(limit, offset);
     }
 
     @Override

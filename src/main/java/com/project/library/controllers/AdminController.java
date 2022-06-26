@@ -163,7 +163,7 @@ public class AdminController {
         return "redirect:/createBook";
     }
 
-    @PostMapping(value = "/", params = "edit")
+    @PostMapping(value = "/home", params = "edit")
     public String redirectToEditBook(@ModelAttribute("Id") Book book) {
         if (!bookList.isEmpty()) {
             bookList.clear();
@@ -188,7 +188,7 @@ public class AdminController {
         Book selectedBook = bookService.findBookById(bookList.get(0).getId());
         adminService.updateBook(selectedBook.getId(), book);
         bookList.clear();
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 }

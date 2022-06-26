@@ -11,7 +11,7 @@ public interface BookService {
 
     List<Book> findBooksByTitleAsc();
 
-    List<Book> findBooksPageable(String order, int limit, int offset);
+    List<Book> findBooksPageable(String sortField, String order, int limit, int offset);
 
     Book findBookById(Long bookId);
 

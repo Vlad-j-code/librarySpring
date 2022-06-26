@@ -35,12 +35,12 @@ public class UserController {
 
     private final List<Book> basket = new ArrayList<>();
 
-    @PostMapping(value = "/{id}")
+    @PostMapping(value = "/home/{id}")
     public String addBookToBasket(@ModelAttribute("Id") Book book, Model model) {
         Book selectedBook = bookService.findBookById(book.getId());
         basket.add(selectedBook);
         model.addAttribute("message", "Added to basket");
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("/basket")
