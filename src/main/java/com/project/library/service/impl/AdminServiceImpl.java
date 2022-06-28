@@ -82,11 +82,6 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void chooseAuthor(String name) {
-//        authors.add(findAuthorByName(name));
-    }
-
-    @Override
     public Long getIdLastBook() {
         return bookRepository.findIdLastBook();
     }

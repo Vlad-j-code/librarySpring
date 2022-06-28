@@ -16,13 +16,7 @@ public interface UserService {
 
     void addLibrarian(User user);
 
-    void updateUser(User user);
-
     void deleteUser(String email);
-
-    User findUser(long userId);
-
-    List<User> getAllUsers();
 
     User findUserByEmail(String email);
 

@@ -105,16 +105,6 @@
                                     placeholder="Keep period"/>
                     </div>
                 </div>
-                <%--            <div class="form-group">--%>
-                <%--                <form:errors path="author" cssStyle="color: #ff0000; font-weight: bold"/>--%>
-                <%--                <br>--%>
-                <%--                <label for="author"><fmt:message key='header.author'/>: </label>--%>
-                <%--                <div class="cols-sm-10">--%>
-                <%--                    <form:select path="author" id="author">--%>
-                <%--                        <form:options items="${authors}" itemValue="author" itemLabel="author"/>--%>
-                <%--                    </form:select>--%>
-                <%--                </div>--%>
-                <%--            </div>--%>
                 <div class="form-group">
                     <label><fmt:message key='header.author'/>: <c:out value="${authors.get(0).name}"/> </label>
                 </div>

@@ -24,8 +24,6 @@ public interface AdminService {
 
     void createBook(Book book, List<Author> authors);
 
-    void chooseAuthor(String name);
-
     Long getIdLastBook();
 
     Long getIdNextBook();

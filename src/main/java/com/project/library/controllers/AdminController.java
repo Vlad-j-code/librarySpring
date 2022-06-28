@@ -143,7 +143,7 @@ public class AdminController {
         } else {
             adminService.createBook(book, authorList);
         }
-        return "redirect:/authors";
+        return "redirect:/home";
     }
 
     @GetMapping("/chooseAuthor")
@@ -188,6 +188,12 @@ public class AdminController {
         Book selectedBook = bookService.findBookById(bookList.get(0).getId());
         adminService.updateBook(selectedBook.getId(), book);
         bookList.clear();
+        return "redirect:/home";
+    }
+
+    @PostMapping(value = "/home{id}", params = "delete")
+    public String deleteBook(@ModelAttribute("Id") Book book) {
+        bookService.deleteBook(book.getId());
         return "redirect:/home";
     }
 

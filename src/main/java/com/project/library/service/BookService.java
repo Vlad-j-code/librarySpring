@@ -16,4 +16,6 @@ public interface BookService {
     Book findBookById(Long bookId);
 
     Book findBookByIsbn(String isbn);
+
+    void deleteBook(Long id);
 }

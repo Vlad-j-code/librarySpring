@@ -62,24 +62,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(User user) {
-
-    }
-
-    @Override
     public void deleteUser(String email) {
         User user = userRepository.findByEmail(email);
         userRepository.delete(user);
-    }
-
-    @Override
-    public User findUser(long userId) {
-        return null;
-    }
-
-    @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAllUsers();
     }
 
     @Override

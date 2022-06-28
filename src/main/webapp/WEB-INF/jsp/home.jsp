@@ -28,19 +28,23 @@
                         <thead class="text-success">
                         <tr>
                             <th>
-                                <a href="/home/${currentPage}?sortField=title&sortDir=${reverseSortDir}" class="link-success">
+                                <a href="/home/${currentPage}?sortField=title&sortDir=${reverseSortDir}"
+                                   class="link-success">
                                     <fmt:message key='header.title'/></a>
                             </th>
                             <th>
-                                <a href="/home/${currentPage}?sortField=author&sortDir=${reverseSortDir}" class="link-success">
+                                <a href="/home/${currentPage}?sortField=author&sortDir=${reverseSortDir}"
+                                   class="link-success">
                                     <fmt:message key='header.authors'/></a>
                             </th>
                             <th>
-                                <a href="/home/${currentPage}?sortField=isbn&sortDir=${reverseSortDir}" class="link-success">
+                                <a href="/home/${currentPage}?sortField=isbn&sortDir=${reverseSortDir}"
+                                   class="link-success">
                                     <fmt:message key='header.isbn'/></a>
                             </th>
                             <th>
-                                <a href="/home/${currentPage}?sortField=year&sortDir=${reverseSortDir}" class="link-success">
+                                <a href="/home/${currentPage}?sortField=year&sortDir=${reverseSortDir}"
+                                   class="link-success">
                                     <fmt:message key='header.year'/></a>
                             </th>
                             <c:if test="${not empty user and user.role eq 'USER'}">
@@ -106,7 +110,17 @@
                                                         <form:input type="hidden" path="id" value="${book.id}"/>
                                                         <form:button type="submit" name="edit"
                                                                      class="btn btn-primary">
-                                                            <fmt:message key="header.edit"/></form:button>
+                                                            <i class="bi bi-pencil"></i>
+                                                        </form:button>
+                                                    </form:form>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <form:form method="post" action="/home{id}" modelAttribute="book">
+                                                        <form:input type="hidden" path="id" value="${book.id}"/>
+                                                        <form:button type="submit" name="delete"
+                                                                     class="btn btn-danger shadow-lg ">
+                                                            <i class="bi bi-trash"></i>
+                                                        </form:button>
                                                     </form:form>
                                                 </div>
                                             </div>
