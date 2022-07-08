@@ -5,10 +5,11 @@ import com.project.library.entity.BookStat;
 import com.project.library.entity.Booking;
 
 import java.util.List;
+import java.util.Set;
 
 public interface BookingService {
 
-    void book(String email, List<Book> books);
+    void book(String email, Set<Book> books);
 
     List<Booking> getAllBooking();
 

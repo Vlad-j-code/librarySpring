@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class BookingServiceImpl implements BookingService {
@@ -31,7 +32,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Transactional
     @Override
-    public void book(String email, List<Book> books) {
+    public void book(String email, Set<Book> books) {
         User user = userRepository.findByEmail(email);
         List<BookStat> stats = bookStatRepository.findBookStat();
         for (Book book : books) {
