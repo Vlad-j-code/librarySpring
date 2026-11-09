@@ -1,3 +1,37 @@
+Library
+
+A Reader registers in the system and then has the ability to:
+
+- Search for books by author or title.
+- Place orders for books from the Catalog.
+
+Unregistered Readers cannot order books.
+
+The Catalog must support sorting books:
+- By title.
+- By author.
+- By edition.
+- By publication date.
+
+The Librarian issues books to Readers either for checkout or for use in the reading room. Each book is issued for a specified period. If a book is not returned by the due date, a fine is charged to the Reader.
+
+A book can be available in the library in one or more copies. The system keeps track of the number of available copies.
+
+Each user has a personal account displaying their registration information, as well as the following information:
+
+1. For Readers:
+- A list of books currently checked out and their due dates. If a book is overdue, the applicable fine amount is displayed.
+
+2. For Librarians:
+- A list of Readers' book orders.
+- A list of Readers and their current loans.
+
+The System Administrator has the following permissions:
+- Add / remove books and edit book information.
+- Create / delete Librarian accounts.
+- Block / unblock users.
+
+
 Бібліотека
 
 Читач реєструється в системі і далі має можливість:
